@@ -1,0 +1,34 @@
+class Solution {
+public:
+    string reformatNumber(string number) {
+        string res="";
+    int i=0;
+    while (number.find("-") < number.length()){
+        number=number.replace(number.find("-"),1,"");
+    }
+    while (number.find(" ") < number.length()){
+        number=number.replace(number.find(" "),1,"");
+    }
+    int len =number.length();
+    cout<<"phone is "<<number<<endl;
+    while (i<=len){
+        while ((len-i)>4){
+            res+=number.substr(i,3);
+            i+=3;
+            if(i<len) res+="-";
+        }
+        if ((len-i)%3){
+            res+=number.substr(i,2);
+            i+=2;
+            if(i<len) res+="-";
+        }
+        else {
+            res+=number.substr(i,3);
+            i+=3;
+            if(i<len) res+="-";
+        }
+
+    }
+        return res;
+    }
+};
