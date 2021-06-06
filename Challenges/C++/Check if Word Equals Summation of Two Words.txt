@@ -1,0 +1,22 @@
+class Solution {
+    
+public:
+    int value(string s){
+    double result=0;
+    double power=1;
+    for (int i = s.length()-1; i>=0 ; i--,power*=10) {
+        result+=power*(s[i]-97);
+    }
+    return result;
+}
+
+    bool isSumEqual(string firstWord, string secondWord, string targetWord) {
+   if (value(firstWord)+value(secondWord)==value(targetWord)){
+        return true;
+    }
+        else {
+            return false;
+        }
+    
+    }
+};
