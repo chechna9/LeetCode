@@ -2,13 +2,13 @@ class Solution {
 public:
     vector<int> runningSum(vector<int>& nums) {
     vector<int> result;
-    vector<int>::iterator ptr = nums.begin();
-    vector<int>::iterator ftr = nums.end();
+    
     int cpt=0;
-    while (ptr != ftr){
-        cpt+=*ptr;
+    int i=0;
+    while (i<nums.size()){
+        cpt+=nums[i];
         result.push_back(cpt);
-        advance(ptr,1);
+        i++;
     }
     return result;
 
